@@ -1,0 +1,7 @@
+CWPROOT=../
+export CWPROOT
+make install
+make finstall
+make mglinstall
+make utils
+make sfinstall

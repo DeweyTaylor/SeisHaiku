@@ -100,7 +100,13 @@ CWP: Jack Cohen
 #endif
 
 #ifndef major	/* major() is a macro for getting the major device number */
-#include <sys/sysmacros.h>
+#	ifdef __HAIKU__
+		typedef unsigned int uint_t;
+		typedef uint_t major_t;
+#		define major(x)	(major_t)((((unsigned)(x)) >> 8) & 0x7f)
+#	else
+#		include <sys/sysmacros.h>
+#	endif
 #endif
 
 /* determine type of file (DISK, PIPE, ...) */
