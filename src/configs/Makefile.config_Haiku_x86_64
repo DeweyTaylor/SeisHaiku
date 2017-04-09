@@ -47,7 +47,7 @@ CWP_FLAGS = $(LARGE_FILE_FLAG) $(ENDIANFLAG) $(XDRFLAG) $(LINEHDRFLAG)
 SHELL = /bin/sh
 ROOT = $(CWPROOT)
 
-LN = ln # this needs to be changed to cp for FAT32 filesystems
+LN = ln -s # this needs to be changed to cp for FAT32 filesystems
 AR = ar
 ARFLAGS = rv
 RANLIB = ranlib
